@@ -1,17 +1,7 @@
-const Input = () => {
-  return (
-    <section>
-      <div className="input">
-        <button className="add-btn">+</button>
-        <input
-          className="input-text"
-          type="text"
-          placeholder="Add New Test"
-          // required
-        />
-      </div>
-    </section>
-  );
-};
+// const Input = () => {
+//   return (
 
-export default Input;
+//   );
+// };
+
+// export default Input;

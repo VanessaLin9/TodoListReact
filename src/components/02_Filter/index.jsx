@@ -1,3 +1,5 @@
+// import React from 'react';
+
 const Filter = () => {
   return (
     <section className="todolist__filter-btns">
