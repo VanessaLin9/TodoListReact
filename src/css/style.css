@@ -121,7 +121,7 @@ input {
   padding: 5px;
 }
 
-#todos {
+.todos {
   position: absolute;
   width: 368px;
   min-height: 200px;
@@ -147,8 +147,10 @@ input {
   color: #5E5E5E;
 }
 
-.far {
+.fas {
   color: #5E5E5E;
+  background-color: #f6f7f8;
+  font-size: large;
 }
 
 .todo-checkbox {

@@ -1,42 +1,38 @@
-import React from 'react';
-// import Input from './01_Input/index';
+import { useState, useCallback } from 'react';
+import Input from './01_Input/index';
 import Filter from './02_Filter/index';
-import Todo from './03_Todo/index';
+import TodoList from './04_TodoList';
+
+const initialTodoList = [
+  { id: 0, text: '123', completed: false },
+  { id: 1, text: '443', completed: true },
+];
 
 const App = () => {
-  const [inputValue, setInputValue] = React.useState('');
-  const handleClick = () => {
-    console.log('click');
-    console.log(inputValue);
+  const [todos, setTodos] = useState(initialTodoList);
+
+  const atAddTodo = (todo: string) => {
+    const newTodo = {
+      id: new Date().getTime().toString(),
+      text: todo,
+      completed: false,
+    };
+    setTodos((prev) => prev.concat(newTodo));
   };
-  const handleInputChange = (e) => {
-    const { value } = e.target;
-    setInputValue(value);
-  };
+  const atDeleteTodo = useCallback(
+    (id: string) => {
+      console.log('delete', id);
+      const newTodos = todos.filter((todo) => todo.id !== id);
+      setTodos(newTodos);
+    },
+    [todos],
+  );
 
   return (
     <div className="container">
-      <h1>Hihi</h1>
-      <h2>Todo List React</h2>
-      {/* <Input /> */}
-      <section>
-        <div className="input">
-          <button className="add-btn" onClick={() => handleClick()}>
-            +
-          </button>
-          <input
-            className="input-text"
-            type="text"
-            placeholder="Add New Test"
-            value={inputValue}
-            onChange={handleInputChange}
-            // required
-          />
-        </div>
-      </section>
-      {/* input */}
+      <Input onAddTodo={atAddTodo} />
       <Filter />
-      <Todo />
+      <TodoList Todolist={todos} onDeleteTodo={atDeleteTodo} />
     </div>
   );
 };
