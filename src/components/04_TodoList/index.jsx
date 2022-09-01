@@ -1,7 +1,7 @@
 import TodoItem from '../03_Todo_Item';
 
 const TodoList = (props) => {
-  const { Todolist, onDeleteTodo } = props;
+  const { Todolist, onDeleteTodo, onCheckTodo } = props;
   return (
     <section>
       <div className="todos">
@@ -12,6 +12,7 @@ const TodoList = (props) => {
             text={item.text}
             completed={item.completed}
             onDeleteTodo={onDeleteTodo}
+            onCheckTodo={onCheckTodo}
           />
         ))}
       </div>

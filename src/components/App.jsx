@@ -21,8 +21,24 @@ const App = () => {
   };
   const atDeleteTodo = useCallback(
     (id: string) => {
-      console.log('delete', id);
       const newTodos = todos.filter((todo) => todo.id !== id);
+      setTodos(newTodos);
+    },
+    [todos],
+  );
+  const atCheckTodo = useCallback(
+    (id: string) => {
+      const newTodos = todos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            id: todo.id,
+            text: todo.text,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      });
+
       setTodos(newTodos);
     },
     [todos],
@@ -32,7 +48,11 @@ const App = () => {
     <div className="container">
       <Input onAddTodo={atAddTodo} />
       <Filter />
-      <TodoList Todolist={todos} onDeleteTodo={atDeleteTodo} />
+      <TodoList
+        Todolist={todos}
+        onDeleteTodo={atDeleteTodo}
+        onCheckTodo={atCheckTodo}
+      />
     </div>
   );
 };

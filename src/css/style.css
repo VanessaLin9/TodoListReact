@@ -39,14 +39,12 @@ p {
 ul,
 li {
   list-style-type: none;
-  /* 拿掉前方圈圈 */
   margin: 0;
   padding: 0;
 }
 
 a {
   text-decoration: none;
-  /* 拿掉底線 */
 }
 
 button {
@@ -138,10 +136,13 @@ input {
   font-size: 24px;
   font-weight: 500;
 }
-
-.checked {
+.todo[data-completed="true"]{
   text-decoration: line-through;
 }
+
+/* .checked {
+  text-decoration: line-through;
+} */
 
 .far {
   color: #5E5E5E;
