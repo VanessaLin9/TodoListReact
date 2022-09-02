@@ -2,6 +2,7 @@ import { useState, useCallback, useMemo } from 'react';
 import Input from './01_Input/index';
 import Filter from './02_Filter/index';
 import TodoList from './04_TodoList';
+import style from '../css/style.module.css'
 
 type TodoType = {
   id: string,
@@ -70,7 +71,7 @@ const App = () => {
   }, [todos, filterType]);
 
   return (
-    <div className="container">
+    <div className={style.container}>
       <Input onAddTodo={atAddTodo} />
       <Filter onFilterChange={atFilterChange} />
       <TodoList

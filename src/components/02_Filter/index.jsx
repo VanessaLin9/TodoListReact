@@ -1,26 +1,26 @@
-// import React from 'react';
+import style from '../../css/style.module.css'
 
 const Filter = (props) => {
   const { onFilterChange } = props;
   return (
-    <section className="todolist__filter-btns">
-      <div className="filter">
+    <section>
+      <div className={style.filter}>
         <button
-          className="filter-btn"
+          className={style.filterBtn}
           id="all"
           onClick={() => onFilterChange('all')}
         >
           All
         </button>
         <button
-          className="filter-btn"
+          className={style.filterBtn}
           id="active"
           onClick={() => onFilterChange('active')}
         >
           Active
         </button>
         <button
-          className="filter-btn"
+          className={style.filterBtn}
           id="completed"
           onClick={() => onFilterChange('completed')}
         >

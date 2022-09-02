@@ -1,4 +1,5 @@
 import { useState, memo } from 'react';
+import style from '../../css/style.module.css'
 
 const Input = memo((props) => {
   const { onAddTodo } = props;
@@ -14,12 +15,12 @@ const Input = memo((props) => {
   return (
     <section>
       <form onSubmit={atSubmit}>
-        <div className="input">
-          <button className="add-btn" onClick={atSubmit}>
+        <div className={style.input}>
+          <button className={style.addBtn} onClick={atSubmit}>
             +
           </button>
           <input
-            className="input-text"
+            className={style.inputText}
             type="text"
             placeholder="Add New Test"
             value={input}

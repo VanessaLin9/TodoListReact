@@ -75,7 +75,7 @@ input {
   align-items: center;
 }
 
-.add-btn {
+.addBtn {
   margin-left: 22px;
   margin-right: 18px;
   width: 30px;
@@ -86,8 +86,8 @@ input {
   font-size: 24px;
 }
 
-.input-text,
-.input-text::placeholder {
+.inputText,
+.inputText::placeholder {
   width: 70%;
   font-weight: 700;
   font-size: 24px;
@@ -109,7 +109,7 @@ input {
   border: 1px solid #000000;
 }
 
-.filter-btn {
+.filterBtn {
   margin: 4px;
   min-width: 86px;
   background: #D9D9D9;
@@ -140,13 +140,6 @@ input {
   text-decoration: line-through;
 }
 
-/* .checked {
-  text-decoration: line-through;
-} */
-
-.far {
-  color: #5E5E5E;
-}
 
 .fas {
   color: #5E5E5E;
@@ -154,7 +147,7 @@ input {
   font-size: large;
 }
 
-.todo-checkbox {
+.todoCheckbox {
   margin: 0 28px;
   width: 25px;
   height: 25px;
@@ -163,4 +156,10 @@ input {
   border-radius: 5px;
   box-sizing: border-box;
   border-radius: 0%;
+}
+
+:global(.fas) {
+  color: #5E5E5E;
+  background-color: #f6f7f8;
+  font-size: large;
 }
